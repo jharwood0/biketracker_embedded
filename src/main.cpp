@@ -2,6 +2,8 @@
 #include <TinyGPS.h>
 
 /*
+Arduino port
+
 Serial -> DEBUG
 Serial1 -> GPS
 Serial2 -> LoRaWAN

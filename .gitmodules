@@ -1,0 +1,3 @@
+[submodule "lib/RN2483"]
+	path = lib/RN2483
+	url = https://github.com/jharwood0/RN2483

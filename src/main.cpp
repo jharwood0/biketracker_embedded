@@ -1,6 +1,5 @@
-#include <TinyGPS.h>
-#include "../lib/RN2483/src/rn2xx3.h"
-
+#include <TinyGPS.h> /* GPS Lib */
+#include "../lib/RN2483/src/rn2xx3.h" /* RN2483 Lib */
 /* for standby ability */
 #include <RTClock.h>
 #include <libmaple/pwr.h>
@@ -16,11 +15,9 @@ UART3 -> Serial2 -> LoRaWAN
 String APPEUI = "70B3D57EF0003AA2";
 String APPKEY = "23D8583ACF5A8B628540A53F0A18876D";
 
-
 #define DEBUG 1
 const int debug_baud = 9600;
 const int gps_baud = 9600;
-
 
 float flat, flon;
 unsigned long age;
@@ -101,7 +98,7 @@ void loop(){
       Serial.print(age);
     }
   }
-
+  LoRaWAN.tx("!");
   if(DEBUG) Serial.println(LoRaWAN.deveui());
 
   delay(1000);

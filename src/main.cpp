@@ -69,9 +69,12 @@ void setup(){
 
   /* Join LoRaWAN */
   bool join_result = LoRaWAN.initOTAA(APPEUI, APPKEY);
-  if(join_result == false){
-    if(DEBUG) Serial.println("Could not join LoRaWAN network....");
+  while(!join_result){
+    if(DEBUG) Serial.println("Unable to join LoRaWAN network");
+    delay(10000); //delay a 10 seconds before retry
+    join_result = LoRaWAN.init();
   }
+  if(DEBUG) Serial.println("Connected to LoRaWAN");
 }
 
 void loop(){

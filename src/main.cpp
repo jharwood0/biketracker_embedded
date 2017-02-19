@@ -87,6 +87,7 @@ void loop(){
     while (Serial1.available())
     {
       uint8_t c = Serial1.read();
+      if(DEBUG) Serial.print(char(c));
       if (gps.encode(c))
       {
         new_gps_data = true;

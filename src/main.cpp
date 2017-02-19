@@ -68,20 +68,18 @@ void setup(){
     Serial2.flush();
     LoRaWAN.autobaud();
     if(DEBUG) Serial.print("Done\n");
-    /* Join LoRaWAN
+    /* Join LoRaWAN */
     bool join_result = LoRaWAN.initOTAA(APPEUI, APPKEY);
     while(!join_result){
       if(DEBUG) Serial.println("Unable to join LoRaWAN network");
       delay(10000); //delay a 10 seconds before retry
       join_result = LoRaWAN.init();
     }
-    */
     if(DEBUG) Serial.println("Connected to LoRaWAN");
   }
 }
 
 void loop(){
-
   if(ENABLE_GPS){
     if(DEBUG) Serial.print("[GPS] Reading UART...\n");
     while (Serial1.available())

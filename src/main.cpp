@@ -1,5 +1,5 @@
 #include <TinyGPS.h> /* GPS Lib */
-#include "rn2xx3.h" /* RN2483 Lib */
+#include <rn2xx3.h> /* RN2483 Lib */
 /* for standby ability */
 #include <RTClock.h>
 #include <libmaple/pwr.h>
